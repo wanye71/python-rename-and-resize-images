@@ -2,6 +2,7 @@ import os
 import os.path as path
 
 from PIL import Image
+from glob import glob
 
 # Source directory
 sourcedir = path.abspath('fullsize')
@@ -14,7 +15,8 @@ def main():
     if not path.exists(destdir):
         os.mkdir(destdir)
 
-    files = os.listdir(sourcedir)
+    files = glob(path.join(sourcedir, '*.jpg'))
+    
     #print(files)
     for imgfile in files:
         #print(imgfile)
