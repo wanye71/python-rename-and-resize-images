@@ -19,18 +19,21 @@ def main():
     
     #print(files)
     for imgfile in files:
-        #print(imgfile)
+        # #print(imgfile)
 
-        # Create image path
-        imgpath = path.join(sourcedir, imgfile)
-        # print(imgpath)
+        # # Create image path
+        # imgpath = path.join(sourcedir, imgfile)
+        # # print(imgpath)
 
         # Create image destination patch
-        destpath = path.join(destdir, imgfile)
-        # print(destpath)
+        destpath = path.join(destdir, path.basename(imgfile))
+        print(destpath)
+
+        # # Open Image
+        # image = Image.open(imgpath)
 
         # Open Image
-        image = Image.open(imgpath)
+        image = Image.open(imgfile)
 
         # Get Image size
         current_size = image.size
